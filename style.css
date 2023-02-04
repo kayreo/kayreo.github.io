@@ -1,0 +1,35 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+/* Fonts */
+    margin: 0px;
+    color: white;
+    background-color: gray;
+}
+
+/* Header Style */
+.header h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 35px;
+    text-align: center;
+    color: white;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+/* Paragraph Style */
+p {
+    font-size: 18px;
+}
+
+i {
+    font-size: 35px;
+}

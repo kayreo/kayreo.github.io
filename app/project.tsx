@@ -14,7 +14,7 @@ export default function Project({ name, desc }) {
     return  <div className="m-4 bg-gray-500 rounded-lg text-white p-4 text-center">
             <h1 className="text-xl font-bold">{name ? name : 'Default name'}</h1>
             <p className="text-sm">{desc ? desc : 'This is a project description'}</p>
-            <Image src={dog} alt={"dog"}></Image>;
+            <Image src={dog} alt={"dog"} className="rounded-full mx-auto"></Image>
             </div>;
 
 }

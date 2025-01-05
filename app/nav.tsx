@@ -36,6 +36,10 @@ export default function Nav() {
         setClicked(!clicked); // Toggle the state on click
     };    
 
+    function handleURL(tgtURL) {
+        window.open(tgtURL);
+    }
+
     if (width < 1080) {
         console.log("Small window");
         return  <div className="fixed bg-orange-500 text-white w-screen text-center">
@@ -58,7 +62,9 @@ export default function Nav() {
         return  <div className="hidden lg:block fixed bg-orange-500 text-white w-screen text-center">
             <div className="flex flex-row gap-x-4 justify-between mr-10">
                 <p className="ml-10"><SideButton title={"Home"}></SideButton> <SideButton title={"Projects"}></SideButton> <SideButton title={"Resume"}></SideButton> <SideButton title={"Contact"}></SideButton> </p>
-                <p><FontAwesomeIcon icon={faGithub} className="logo-btn" /> <FontAwesomeIcon icon={faLinkedin} className="logo-btn" /> <FontAwesomeIcon icon={faItchIo} className="logo-btn" /></p>
+                <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
+                    <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} /> 
+                    <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>
             </div>
         </div>;
     }

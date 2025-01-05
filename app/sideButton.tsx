@@ -20,5 +20,5 @@ export default function SideButton({ title }) {
     }
   }
  
-  return <button className="bg-blue-500 rounded-lg m-4 screen text-white p-4 text-center" onClick={handleClick}>{title ? title : 'Default button'}</button>;
+  return <button className="nav-btn bg-blue-500 rounded-lg m-4 screen text-white p-4 text-center" onClick={handleClick}>{title ? title : 'Default button'}</button>;
 }

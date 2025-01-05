@@ -16,6 +16,8 @@ export default function HomePage() {
   return (
     <div className= "flex-col justify-center min-h-screen content-start relative">
         <Nav />
+        <div className="m-4 bg-orange-500 text-white w-screen p-8"> 
+        </div>
         <SideBar />
         <Header title={"Projects"} />
         <Project name={"Project 1"} desc={"Desc1"}/>

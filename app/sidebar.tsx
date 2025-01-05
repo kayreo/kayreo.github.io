@@ -16,14 +16,10 @@ export default function SideBar() {
     function handleClick() {
         setLikes(likes + 1);
     }
-    return  <div className="flex flex-row h-screen gap-x-4 min-h-screen content-start mt-20 pt-10 bg-gray-500 rounded-lg flex-grow text-white m-4 p-4 text-center">
+    return  <div className="flex flex-col gap-x-4 content-start bg-gray-500 rounded-lg flex-grow text-white m-4 p-4 text-center">
         <h1 className="header">Hi, I'm Kayla!</h1>
-        <Image src={dog} alt={"dog"} className="mx-auto rounded-full pb-[2%]"></Image>
         <p className="text-xl pb-[2%]">I am a senior computer science major at the University of Texas at Austin.</p>
-        <div className="flex flex-col content-start">
-            <p className="text-xl pb-[2%]">I'm looking for a software engineering position where I can tackle creative problems and discover innovative solutions.</p>
-            <p className="text-xl"></p>
-        </div>
+        <Image src={dog} alt={"dog"} className="mx-auto rounded-full pb-[2%]"></Image>
+        <p className="text-xl">I'm looking for a software engineering position where I can tackle creative problems and discover innovative solutions.</p>
     </div>;
-
 }

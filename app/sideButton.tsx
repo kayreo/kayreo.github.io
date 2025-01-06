@@ -1,6 +1,6 @@
 'use client';
  
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
  
 export default function SideButton({ title }) {
   const [likes, setLikes] = useState(0);
@@ -19,6 +19,24 @@ export default function SideButton({ title }) {
         }
     }
   }
+
+
+  function handleJump(tgtID) {
+    console.log("TGT: ", tgtID);
+    if (["Home", "Projects"].includes(tgtID)) {
+        const element = document.getElementById(tgtID);
+
+        const rect = element.getBoundingClientRect();
+        
+        const scrollPosition = rect.top + window.scrollY - 90;
+
+        // Scroll to the calculated position, stopping X pixels away
+        window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth',
+        });
+    }
+}
  
-  return <button className="nav-btn bg-blue-500 rounded-lg m-4 screen text-white p-4 text-center" onClick={handleClick}>{title ? title : 'Default button'}</button>;
+  return <button className="nav-btn bg-blue-500 rounded-lg m-4 screen text-white p-4 text-center" onClick={() => handleJump(title)}>{title ? title : 'Default button'}</button>;
 }

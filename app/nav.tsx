@@ -33,7 +33,7 @@ export default function Nav() {
     
 
     function handleClick() {
-        setClicked(!clicked); // Toggle the state on click
+        setClicked(!clicked);
     };    
 
     function handleURL(tgtURL) {
@@ -45,23 +45,29 @@ export default function Nav() {
         return  <div className="fixed bg-orange-500 text-white w-screen text-center">
         <div className="flex flex-row gap-x-4 justify-between mr-10">
             <p><FontAwesomeIcon icon={faBars} className="logo-btn"
-            onClick={handleClick} // onClick event
-            style={{ cursor: 'pointer' }} // Make the icon look clickable
+            onClick={handleClick}
+            style={{ cursor: 'pointer' }}
         /></p>
         </div>
         {clicked ? (
+            <div>
             <div className="flex-col justify-center content-start">
                 <p><SideButton title={"Home"}></SideButton></p>
                 <p> <SideButton title={"Projects"}></SideButton></p> 
-                <p><SideButton title={"Resume"}></SideButton></p> 
                 <p><SideButton title={"Contact"}></SideButton> </p>
+                <p><SideButton title={"Resume"}></SideButton></p> 
             </div>
+            <div className="flex-row justify-center content-start">
+                    <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
+                    <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} /> 
+                    <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>
+            </div></div>
         ) : (<div></div>)}
     </div>; 
     } else {
         return  <div className="hidden lg:block fixed bg-orange-500 text-white w-screen text-center">
             <div className="flex flex-row gap-x-4 justify-between mr-10">
-                <p className="ml-10"><SideButton title={"Home"}></SideButton> <SideButton title={"Projects"}></SideButton> <SideButton title={"Resume"}></SideButton> <SideButton title={"Contact"}></SideButton> </p>
+                <p className="ml-10"><SideButton title={"Home"}></SideButton> <SideButton title={"Projects"}></SideButton> <SideButton title={"Contact"}></SideButton> <SideButton title={"Resume"}></SideButton> </p>
                 <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
                     <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} /> 
                     <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>

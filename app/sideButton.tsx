@@ -23,18 +23,19 @@ export default function SideButton({ title }) {
 
   function handleJump(tgtID) {
     console.log("TGT: ", tgtID);
-    if (["Home", "Projects"].includes(tgtID)) {
+    if (["Home", "Projects", "Contact"].includes(tgtID)) {
         const element = document.getElementById(tgtID);
 
         const rect = element.getBoundingClientRect();
         
         const scrollPosition = rect.top + window.scrollY - 90;
 
-        // Scroll to the calculated position, stopping X pixels away
         window.scrollTo({
             top: scrollPosition,
             behavior: 'smooth',
         });
+    } else if (tgtID == "Resume") {
+        window.open("/Han_Resume.pdf", "_blank");
     }
 }
  

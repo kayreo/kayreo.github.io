@@ -23,6 +23,7 @@ export default function HomePage() {
         <Project name={"Project 1"} desc={"Desc1"}/>
         <Project name={"Project 2"} desc={"Desc2"}/>
         <Project name={"Project 3"} desc={"Desc3"}/>
+        <Header title={"Contact"} />
     </div>
   );
 }

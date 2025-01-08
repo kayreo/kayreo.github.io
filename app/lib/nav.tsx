@@ -5,7 +5,8 @@ import { faGithub, faLinkedin, faItchIo } from '@fortawesome/free-brands-svg-ico
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect  } from 'react';
 import SideButton from './sideButton';
-
+import ProjButton from './projButton';
+import Link from 'next/link';
 
 export default function Nav() {
     const [clicked, setClicked] = useState(false);
@@ -40,9 +41,22 @@ export default function Nav() {
         window.open(tgtURL);
     }
 
+    function handleProj(tgtProj) {
+        const element = document.getElementById(tgtProj);
+
+        const rect = element.getBoundingClientRect();
+        
+        const scrollPosition = rect.top + window.scrollY - 90;
+
+        window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth',
+        });
+    }
+
     if (width < 1080) {
         console.log("Small window");
-        return  <div className="fixed bg-orange-500 text-white w-screen text-center">
+        return  <div className="z-10 fixed bg-orange-500 text-white w-screen text-center">
         <div className="flex flex-row gap-x-4 justify-between mr-10">
             <p><FontAwesomeIcon icon={faBars} className="logo-btn"
             onClick={handleClick}
@@ -51,23 +65,26 @@ export default function Nav() {
         </div>
         {clicked ? (
             <div>
-            <div className="flex-col justify-center content-start">
-                <p><SideButton title={"Home"}></SideButton></p>
-                <p> <SideButton title={"Projects"}></SideButton></p> 
-                <p><SideButton title={"Contact"}></SideButton> </p>
+            <div className="z-10 navMenu flex-col justify-center content-start">
+                <Link href="/"><p><SideButton title={"Home"}></SideButton></p></Link>
+                <Link href="/projects"><p> <SideButton title={"Projects"}></SideButton></p></Link>
                 <p><SideButton title={"Resume"}></SideButton></p> 
+                <p><SideButton title={"Contact"}></SideButton> </p>
             </div>
-            <div className="flex-row justify-center content-start">
+            <div className="navMenu flex-row justify-center content-start">
                     <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
-                    <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} /> 
+                    <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} />
                     <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>
             </div></div>
         ) : (<div></div>)}
     </div>; 
     } else {
-        return  <div className="hidden lg:block fixed bg-orange-500 text-white w-screen text-center">
+        return  <div className="z-10 hidden lg:block fixed bg-orange-500 text-white w-screen text-center">
             <div className="flex flex-row gap-x-4 justify-between mr-10">
-                <p className="ml-10"><SideButton title={"Home"}></SideButton> <SideButton title={"Projects"}></SideButton> <SideButton title={"Contact"}></SideButton> <SideButton title={"Resume"}></SideButton> </p>
+                <div className="ml-10"><Link href="/"><SideButton title={"Home"}></SideButton></Link>
+                <Link href="/projects"><SideButton title={"Projects"}></SideButton></Link>
+                <SideButton title={"Resume"}></SideButton>
+                <SideButton title={"Contact"}></SideButton></div>
                 <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
                     <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} /> 
                     <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>

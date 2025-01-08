@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import dog from "../public/whatthe.jpg";
- 
+import dog from "../../public/whatthe.jpg";
+import ImageSlider from "./imageSlider"
 import { useState } from 'react';
  
 export default function Project({ name, desc }) {
@@ -12,9 +12,9 @@ export default function Project({ name, desc }) {
   }
 
     return  <div className="m-4 bg-gray-500 rounded-lg text-white p-4 text-center">
-            <h1 className="text-xl font-bold">{name ? name : 'Default name'}</h1>
+            <h1 className="header font-bold">{name ? name : 'Default name'}</h1>
+            <ImageSlider />
             <p className="text-sm">{desc ? desc : 'This is a project description'}</p>
-            <Image src={dog} alt={"dog"} className="rounded-full mx-auto"></Image>
             </div>;
 
 }

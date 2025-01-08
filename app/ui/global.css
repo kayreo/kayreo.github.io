@@ -19,6 +19,7 @@ input[type='number']::-webkit-outer-spin-button {
 
 .logo-btn {
   @apply hover:text-blue-500 transition-colors duration-300 text-5xl p-4;
+  z-index: 15;
 }
 
 .nav-btn {
@@ -26,5 +27,15 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .header {
-  @apply text-4xl font-bold pb-[5%];
+  @apply text-4xl font-bold pb-[2%];
+}
+
+.googleForm {
+  position: relative;
+  z-index: 1;
+}
+
+.navMenu {
+  z-index: 10;
+  pointer-events: auto;
 }

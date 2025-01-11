@@ -37,10 +37,6 @@ export default function Nav() {
         setClicked(!clicked);
     };    
 
-    function handleURL(tgtURL) {
-        window.open(tgtURL);
-    }
-
     function handleProj(tgtProj) {
         const element = document.getElementById(tgtProj);
 
@@ -72,9 +68,9 @@ export default function Nav() {
                 <p><SideButton title={"Contact"}></SideButton> </p>
             </div>
             <div className="navMenu flex-row justify-center content-start">
-                    <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
-                    <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} />
-                    <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>
+                <p><Link href={"https://github.com/kayreo"} target={"_blank"}><FontAwesomeIcon icon={faGithub} className={"logo-btn" } /></Link>
+                    <Link href={"https://www.linkedin.com/in/kaylarhan/"} target={"_blank"}><FontAwesomeIcon icon={faLinkedin} className={"logo-btn" } /> </Link>
+                    <Link href={"https://kayreo.itch.io/"} target={"_blank"}><FontAwesomeIcon icon={faItchIo} className={"logo-btn" } /></Link></p>
             </div></div>
         ) : (<div></div>)}
     </div>; 
@@ -85,9 +81,9 @@ export default function Nav() {
                 <Link href="/projects"><SideButton title={"Projects"}></SideButton></Link>
                 <SideButton title={"Resume"}></SideButton>
                 <SideButton title={"Contact"}></SideButton></div>
-                <p><FontAwesomeIcon icon={faGithub} className="logo-btn" onClick={() => handleURL("https://github.com/kayreo")} /> 
-                    <FontAwesomeIcon icon={faLinkedin} className="logo-btn" onClick={() => handleURL("https://www.linkedin.com/in/kaylarhan/")} /> 
-                    <FontAwesomeIcon icon={faItchIo} className="logo-btn" onClick={() => handleURL("https://kayreo.itch.io/")} /></p>
+                <p><Link href={"https://github.com/kayreo"} target={"_blank"}><FontAwesomeIcon icon={faGithub} className={"logo-btn" } /></Link>
+                <Link href={"https://www.linkedin.com/in/kaylarhan/"} target={"_blank"}><FontAwesomeIcon icon={faLinkedin} className={"logo-btn" } /> </Link>
+                <Link href={"https://kayreo.itch.io/"} target={"_blank"}><FontAwesomeIcon icon={faItchIo} className={"logo-btn" } /></Link></p>
             </div>
         </div>;
     }

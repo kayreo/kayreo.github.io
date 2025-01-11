@@ -39,3 +39,15 @@ input[type='number']::-webkit-outer-spin-button {
   z-index: 10;
   pointer-events: auto;
 }
+
+.accessLink {
+  @apply text-3xl hover:text-blue-500 transition-colors duration-300 p-4
+}
+
+.projectType {
+  @apply text-3xl hover:text-black transition-colors duration-300
+}
+
+.tooltip {
+  @apply absolute bottom-full mb-2 p-2 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 group-hover:visible
+}

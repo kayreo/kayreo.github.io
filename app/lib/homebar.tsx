@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import Image from 'next/image';
-import portrait from "../../public/Headshot.jpg";
+import portrait from "../public/Headshot.jpg";
 
 export default function HomeBar() {
     const buttonNames = ['Home', 'Projects'];

@@ -2,9 +2,9 @@
 import '../ui/carousel.css';
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import maid0 from "../../public/maid0.png";
-import maid1 from "../../public/maid1.png";
-import maid2 from "../../public/maid2.png";
+import maid0 from "../public/maid0.png";
+import maid1 from "../public/maid1.png";
+import maid2 from "../public/maid2.png";
 
 export default function ImageSlider({whichCarousel}) {
     if (whichCarousel == "Maid Rush Madness") {

@@ -12,13 +12,13 @@ export default function ImageSlider({whichCarousel}) {
             <div>
                 <Carousel showThumbs={false}>
                     <div>
-                        <Image src={maid0} alt="Maid Rush Madness Logo"/>
+                        <Image src={"/maid0.png"} alt="Maid Rush Madness Logo"/>
                     </div>
                     <div>
-                        <Image src={maid1} alt="Gameplay of Maid Rush Madness"/>
+                        <Image src={"/maid1.png"} alt="Gameplay of Maid Rush Madness"/>
                     </div>
                     <div>
-                        <Image src={maid2} alt="Dialogue from Maid Rush Madness"/>
+                        <Image src={"/maid2.png"} alt="Dialogue from Maid Rush Madness"/>
                     </div>
                 </Carousel>
             </div>

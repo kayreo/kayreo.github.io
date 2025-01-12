@@ -1,0 +1,53 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.logo-btn {
+  @apply hover:text-blue-500 transition-colors duration-300 text-5xl p-4;
+  z-index: 15;
+}
+
+.nav-btn {
+  @apply hover:text-blue-500 transition-colors duration-300 text-2xl p-2 pl-5 pr-5;
+}
+
+.header {
+  @apply text-4xl font-bold pb-[2%];
+}
+
+.googleForm {
+  position: relative;
+  z-index: 1;
+}
+
+.navMenu {
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.accessLink {
+  @apply text-3xl hover:text-blue-500 transition-colors duration-300 p-4
+}
+
+.projectType {
+  @apply text-3xl hover:text-black transition-colors duration-300
+}
+
+.tooltip {
+  @apply absolute bottom-full mb-2 p-2 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 group-hover:visible
+}
